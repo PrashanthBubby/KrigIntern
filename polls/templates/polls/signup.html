@@ -1,0 +1,17 @@
+<html>
+<head>
+<TITLE>Signup Page</TITLE
+</head>
+<center>
+<FORM method="POST" action="polls/backing.cgi/">
+{% csrf_token %}
+<body>
+<p>login name:</p><input type="text" placeholder="abcde" name="username">
+<p>Password:</p><input type="password" name="password" >
+<br>
+<br>
+<input type="submit" value="submit">
+</form>
+</body>
+</center>
+</html>
