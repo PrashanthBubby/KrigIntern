@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <HTML>
-<HEAD><TITLE>Login Page</TITLE></HEAD>
-<BODY>
+<HEAD><TITLE>Login Page</TITLE>
+<style>
+.one {
+    border: 2px solid black;
+    border-radius: 5px;
+	width:40%;
+	position:fixed;
+	left:50%;
+	top:20%;
+	bottom:20%;
+	}
+.two {
+     background-color: rgb(243, 241, 244);
+	
+	}
+.tytl{
+     float:left;
+	 width:40%;
+	 margin:0 px;
+	 text-align:center;
+	 font-size:600%;
+	 height:100%;
+	  font-family: "Georgia", Times, serif;
+     }
+</style>
+
+</HEAD>
+<BODY class="two">{% csrf_token %}
+<div class="tytl">
+<h1>Being Bro:)</h1>
+</div>
 <CENTER>
+
+<div class="one">
 <FORM method="GET" action="/polls/signup/">{% csrf_token %}
 <p>Have no account?</p>
 <input type="submit" value="SIGN UP">
 </FORM>
 
-<FORM method="POST" action="/polls/blog/">{% csrf_token %}
-<p>sign in if already signed up </p>
-<paragraph> Enter your login name: <input type="text" name="login">
-<paragraph> Enter your password: <input type=password name="password">
-<paragraph> <input type="submit" value="Signin">
+<FORM method="POST">
+{% csrf_token %}
+{{ form.as_p}}
+<input type="submit" value="Signin">
+<br>
+<br>
 </FORM>
-
+</div>
 
 </CENTER>
-<HR>
+
 
 
 </BODY>

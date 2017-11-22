@@ -1,16 +1,51 @@
 <html>
 <head>
-<TITLE>Signup Page</TITLE
+<TITLE>Signup Page</TITLE>
+<style>
+.one{ 
+    border: 2px solid black;
+    border-radius: 5px;
+	width:40%;
+	position:fixed;
+	left:50%;
+	top:20%;
+	bottom:20%;
+}
+.two {
+     background-color: rgb(243, 241, 244);
+	}
+.tytl{
+     float:left;
+	 width:40%;
+	 margin:0 px;
+	 text-align:center;
+	 font-size:600%;
+	 height:100%;
+	  font-family: "Georgia", Times, serif;
+     }
+</style>
 </head>
 <center>
-<FORM method="POST" action="polls/backing.cgi/">
-{% csrf_token %}
-<body>
-<p>login name:</p><input type="text" placeholder="abcde" name="username">
-<p>Password:</p><input type="password" name="password" >
+<form method="POST" action="/polls/signup_form/">
+
+<body class="two">{% csrf_token %}
+<div class="tytl">
+<h1>Being Bro:)</h1>
+</div>
+<div class="one">
 <br>
+<label for="username">Username:</label>
+<input id="username"type="text" placeholder="abcde" name="username"><br><br>
+<label for="password">Password:</label>
+<input id="password" type="password" name="password" >
+<br>
+{%block content%}
+{%endblock%}
 <br>
 <input type="submit" value="submit">
+<br>
+<br>
+</div>
 </form>
 </body>
 </center>
